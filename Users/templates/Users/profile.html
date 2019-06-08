@@ -1,0 +1,31 @@
+{% extends "Team/base.html" %}
+{% load static %}
+{%block head%}
+<link rel="stylesheet" type="text/css" href="{% static 'Users/prof.css' %}">
+{%endblock head%}
+{% block content %}
+
+
+    <div class="container profile-total border border-primary rounded" >
+      <div class="profile-head">
+        <img class="rounded-circle profile-img" src="{{ user.profile.image.url }}" width="70px" height="70px">
+          <h2 class="text-primary">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.profile.skills }}</p>
+          </div>
+
+        <!-- FORM HERE -->
+        <div class="container" style="margin:20px;">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+
+                {{ UUForm.as_p}}
+                {{ PUForm.as_p}}
+
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+    </div>
+{% endblock content %}

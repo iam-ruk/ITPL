@@ -1,0 +1,35 @@
+{% extends "Team/base.html" %}
+{% load static %}
+{%block head%}
+<link rel="stylesheet" type="text/css" href="{% static 'Team/detail.css' %}">
+{%endblock head%}
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+    </div>
+ <div class="col-md-4">
+<div class="detail-total border border-info">
+    <div class="detail-head">
+<img src="{{user.profile.image.url}}" class="img-rounded detail-image" width="60px" height="60px">
+
+        <h3 align="center">{{ player.name}}</h3>
+        </div>
+    <div class="detail-body">
+    <h3 class="text-secondary">{{ player.skill }}</h3>
+    <h3 class="text-secondary">{{ player.team }}</h3>
+    <h3 class="text-secondary">{{ player.dept }}</h3>
+        </div>
+     <div class="border-top pt-3">
+            <small class="text-muted">
+                Edit player <a class="ml-2" href="{%url 'team-update' player.pk %}">Edit</a>
+            </small>
+         <small class="text-muted">
+                Delete player <a class="ml-2" href="{%url 'team-delete' player.pk %}">Delete</a>
+            </small>
+        </div>
+</div>
+ </div>
+</div>
+
+
+{% endblock content %}

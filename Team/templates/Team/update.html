@@ -1,0 +1,15 @@
+{%extends "Team/base.html"%}
+{% block content %}
+    <div class="content-section container" style="margin:20px;">
+        <form method="POST">
+            {% csrf_token %}
+
+
+                {{ form.as_p}}
+
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

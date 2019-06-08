@@ -1,0 +1,37 @@
+{% extends "Team/base.html" %}
+{% load static %}
+{%block head%}
+<link rel="stylesheet" type="text/css" href="{% static 'Team/list.css' %}">
+{%endblock head%}
+{% block content %}
+<div class="container">
+<div class="row">
+    {% for player in players %}
+
+    {% if player.dept == 'IT' or player.dept == 'it' or player.dept == '-IT' or player.dept == '-it' %}
+    <div class="col-md-3 border border-dark list-total" >
+        <div class="list-head container-fluid">
+            <a href="{%url 'team-detail' player.id %}"><h3>{{player.name}}</h3></a>
+        </div>
+        <div class="list-body">
+        <h4 class="text-secondary">{{player.skill}}</h4>
+        <h4 class="text-secondary">{{player.team}}</h4>
+        <h4 class="text-secondary">{{player.dept}}</h4>
+            </div>
+    </div>
+    {%else%}
+    <div class="col-md-3 border border-dark list-total" >
+        <div class="list-head1 container-fluid">
+            <a href="{%url 'team-detail' player.id %}"><h3>{{player.name}}</h3></a>
+        </div>
+        <div class="list-body">
+        <h4 class="text-secondary">{{player.skill}}</h4>
+        <h4 class="text-secondary">{{player.team}}</h4>
+        <h4 class="text-secondary">{{player.dept}}</h4>
+            </div>
+    </div>
+    {% endif%}
+    {% endfor %}
+ </div>
+    </div>
+    {% endblock content %}

@@ -1,0 +1,14 @@
+{%extends "Team/base.html"%}
+{% block content %}
+    <div class="content-section container" style="margin:20px;">
+        <form method="POST">
+            {% csrf_token %}
+            <h2>Are you sure?</h2>
+
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Delete</button>
+                <a class="btn btn-outline-info" href="{%url 'team-home' %}">cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,18 @@
+.list-total{
+padding:0px;
+margin:20px;
+}
+.list-head{
+text-align:center;
+background-color:blue;
+}
+.list-head1{
+text-align:center;
+background-color:grey;
+}
+.list-body{
+text-align:center;
+}
+a {
+color: white;
+}
