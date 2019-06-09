@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Player
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 # Create your views here.
 
 
@@ -39,4 +40,4 @@ class PlayerUpdateView(LoginRequiredMixin,UpdateView):
 class PlayerDeleteView(DeleteView):
     model = Player
     template_name = 'Team/delete.html'
-    success_url = 'team-home'
+    success_url = reverse_lazy('team-home')
