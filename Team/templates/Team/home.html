@@ -8,7 +8,7 @@
 <div class="row">
     {% for player in players %}
 
-    {% if player.dept == 'IT' or player.dept == 'it' or player.dept == '-IT' or player.dept == '-it' %}
+    {% if player.dept == 'IT' or player.dept == 'it' or player.dept == '-IT' or player.dept == '-it' or player.dept == 'It' or player.dept == 'iT' or player.dept == '-It' or player.dept == '-iT' %}
     <div class="col-md-3 border border-dark list-total" >
         <div class="list-head container-fluid">
             <a href="{%url 'team-detail' player.id %}"><h3>{{player.name}}</h3></a>
