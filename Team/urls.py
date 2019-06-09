@@ -6,5 +6,6 @@ urlpatterns = [
     path('<int:pk>/',PlayerDetailView.as_view(),name='team-detail'),
     path('create/',PlayerCreateView.as_view(),name='team-create'),
     path('<int:pk>/update',PlayerUpdateView.as_view(),name='team-update'),
-    path('<int:pk>/delete',PlayerDeleteView.as_view(),name='team-delete')
+    path('<int:pk>/delete',PlayerDeleteView.as_view(),name='team-delete'),
+    path('contact/',views.contact,name='team-contact')
 ]

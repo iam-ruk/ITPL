@@ -41,3 +41,6 @@ class PlayerDeleteView(DeleteView):
     model = Player
     template_name = 'Team/delete.html'
     success_url = reverse_lazy('team-home')
+
+def contact(request):
+    return render(request,'Team/contacts.html')
