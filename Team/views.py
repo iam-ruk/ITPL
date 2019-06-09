@@ -39,4 +39,4 @@ class PlayerUpdateView(LoginRequiredMixin,UpdateView):
 class PlayerDeleteView(DeleteView):
     model = Player
     template_name = 'Team/delete.html'
-    success_url = ''
+    success_url = 'team-home'
