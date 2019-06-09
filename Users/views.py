@@ -24,7 +24,7 @@ def register(request):
 def profile(request):
     if request.method == 'POST':
         UUForm=UserUpdationForm(request.POST,instance=request.user)
-        PUForm=ProfileUpdationForm(request.POST,request.FILES,instance=request.user.profile)
+        PUForm=ProfileUpdationForm(request.POST,instance=request.user.profile)
         if UUForm.is_valid() and PUForm.is_valid():
             UUForm.save()
             PUForm.save()
