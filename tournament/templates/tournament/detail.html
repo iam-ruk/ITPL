@@ -9,6 +9,7 @@
     <div class="col-md-4">
     </div>
     <div class="col-md-4">
+        {% if match.MatchDescription.best_bowler %}
        <div class="border border-info detail-info">
            <div class="detail-head">
             {{match.team_a}} vs {{match.team_b}}
@@ -20,6 +21,9 @@
                 <p>{{match.MatchDescription}}</p>
            </div>
        </div>
+        {% else %}
+        <h3 id="not-yet">Match not yet started</h3>
+        {% endif%}
     </div>
 </div>
 </div>
