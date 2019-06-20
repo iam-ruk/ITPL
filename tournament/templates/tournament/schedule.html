@@ -1,0 +1,28 @@
+{% extends "Team/base.html" %}
+{% load static %}
+{%block head%}
+<link rel="stylesheet" type="text/css" href="{% static 'tournament/sch.css' %}">
+{%endblock head%}
+{% block content %}
+<div class="container">
+    {% for match in matches %}
+    <a href="{% url 'tournament-detail' match.id %}">
+<div class="row">
+
+
+    <div class="col-md-3 border border-dark list-total" >
+        <div><h3>{{match.team_a}}</h3></div>
+    </div>
+
+    <div class="col-md-3 list-vs border border-light" >
+        <h2>vs</h2>
+    </div>
+    <div class="col-md-3 border border-dark list-total" >
+        <div><h3>{{match.team_b}}</h3></div>
+    </div>
+
+ </div>
+        </a>
+      {% endfor %}
+    </div>
+    {% endblock content %}

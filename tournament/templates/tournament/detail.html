@@ -1,0 +1,26 @@
+{% extends "Team/base.html" %}
+{% load static %}
+{%block head%}
+<link rel="stylesheet" type="text/css" href="{% static 'tournament/sch.css' %}">
+{%endblock head%}
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+       <div class="border border-info detail-info">
+           <div class="detail-head">
+            {{match.team_a}} vs {{match.team_b}}
+           </div>
+           <div class="detail-body">
+               <h3>Man of the match {{match.MatchDescription.m_o_m}}</h3>
+               <h3>Best Bowling figures {{match.MatchDescription.best_bowling}}</h3>
+               <h3>Best Batting figures {{match.MatchDescription.best_batting}}</h3>
+                <p>{{match.MatchDescription}}</p>
+           </div>
+       </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

@@ -25,6 +25,7 @@ urlpatterns = [
     path('',include('Team.urls')),
     path('Login/',views.LoginView.as_view(template_name='Users/login.html'),name='login'),
     path('Logout/',views.LogoutView.as_view(template_name='Users/logout.html'),name='logout'),
+    path('schedule/',include('tournament.urls'))
 ]
 
 if settings.DEBUG:
